@@ -6,6 +6,7 @@ import { ImageIcon, Heart, MessageCircle } from "lucide-react";
 import type { ListingDetail } from "@/features/listings/types";
 import { formatPHP } from "@/lib/utils/currency";
 import { formatCondition } from "@/lib/utils/listing";
+import { PlaceOrderButton } from "./PlaceOrderButton";
 
 export function ListingVariantPicker({ listing }: { listing: ListingDetail }) {
   const hasVariants = listing.variants.length > 0;
@@ -28,7 +29,7 @@ export function ListingVariantPicker({ listing }: { listing: ListingDetail }) {
       <div className="relative mb-4 flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-surface-2">
         <ImageIcon size={32} className="text-text-muted" />
         {!listing.isOwner && (
-          // TODO(wishlist step): wire up to the wishlist mutation
+          // TODO(wishlist step): wire up to the wishlist mutation.
           <Heart size={20} className="absolute right-2.5 top-2.5 cursor-pointer text-text-primary" />
         )}
         {selected?.label && (
@@ -122,13 +123,10 @@ export function ListingVariantPicker({ listing }: { listing: ListingDetail }) {
           <button className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-lg border border-border-strong text-sm text-text-primary">
             <MessageCircle size={15} /> Message
           </button>
-          {/* TODO(order flow step): wire up the real create_order call. */}
-          <button
+          <PlaceOrderButton
+            listingItemId={selected?.id}
             disabled={hasVariants && !selected?.available}
-            className="h-11 flex-[2] rounded-lg bg-accent text-sm text-white disabled:opacity-45"
-          >
-            Place order
-          </button>
+          />
         </div>
       )}
     </div>
