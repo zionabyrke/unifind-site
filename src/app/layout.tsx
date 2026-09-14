@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/lib/theme/ThemeProvider";
 import { getNoFlashScript } from "@/lib/theme/noFlashScript";
-import { Navbar } from "@/components/layout/Navbar";
-import { MobileTabBar } from "@/components/layout/MobileTabBar";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -16,17 +14,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Blocking on purpose — must run before first paint to avoid a
+        {/* Blocking on purpose - must run before first paint to avoid a
             light-mode flash. suppressHydrationWarning above covers the
-            .dark class + inline style attrs this script adds to <html>. */}
+            .dark class + inline style attrs this script adds to <html> */}
         <script dangerouslySetInnerHTML={{ __html: getNoFlashScript() }} />
       </head>
       <body className="min-h-screen bg-surface-1 text-text-primary antialiased">
-        <ThemeProvider>
-          <Navbar />
-          <main className="pb-16 md:pb-0">{children}</main>
-          <MobileTabBar />
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
