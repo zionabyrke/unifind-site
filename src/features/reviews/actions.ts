@@ -12,7 +12,7 @@ export async function submitReviewAction(
   const { error } = await supabase.rpc("submit_review", {
     p_order_id: orderId,
     p_rating: rating,
-    p_comment: comment || null,
+    p_comment: comment || undefined,
   });
   if (error) return { ok: false, error: error.hint ?? error.message };
   return { ok: true, data: undefined };
