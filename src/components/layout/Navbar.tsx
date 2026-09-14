@@ -12,9 +12,8 @@ export function Navbar() {
   return (
     <header className="hidden items-center gap-4 border-b border-border bg-surface-2 px-6 py-3 md:flex">
       <Link href="/" className="flex shrink-0 items-center gap-2">
-        <Image src={siteConfig.logo.light} alt={siteConfig.name} width={28} height={28} className="dark:hidden" />
-        <Image src={siteConfig.logo.dark} alt={siteConfig.name} width={28} height={28} className="hidden dark:block" />
-        <span className="text-base font-medium text-text-primary">{siteConfig.name}</span>
+        <Image src={siteConfig.logo.light} alt={siteConfig.name} width={80} height={80} className="dark:hidden" />
+        <Image src={siteConfig.logo.dark} alt={siteConfig.name} width={80} height={80} className="hidden dark:block" />
       </Link>
 
       <form action="/search" className="flex h-9 flex-1 items-center gap-2 rounded-lg border border-border bg-surface-1 px-3">

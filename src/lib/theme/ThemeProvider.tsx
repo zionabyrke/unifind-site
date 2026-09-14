@@ -27,8 +27,8 @@ const ACCENT_KEY = "unifind:theme-accent";
 function applyAccentVars(mode: Mode, accent: AccentTheme) {
   const vars = accentPresets[accent][mode];
   const root = document.documentElement;
-  root.style.setProperty("--accent-rgb", vars.accent);
-  root.style.setProperty("--accent-bg-rgb", vars.accentBg);
+  root.style.setProperty("--color-accent", vars.accent);
+  root.style.setProperty("--color-accent-bg", vars.accentBg);
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
