@@ -1,26 +1,39 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --surface-1: 244 244 245;
+  --surface-2: 255 255 255;
+  --border: 228 228 231;
+  --border-strong: 201 201 209;
+  --text-primary: 24 24 27;
+  --text-secondary: 82 82 91;
+  --text-muted: 139 139 149;
+  --text-warning: 180 83 9;
+  --bg-warning: 254 243 199;
+  --text-danger: 220 38 38;
+  --bg-danger: 254 226 226;
+  --text-success: 21 128 61;
+  --bg-success: 220 252 231;
+
+  /* Accent overridden at runtime by ThemeProvider based on the chosen preset. */
+  --accent-rgb: 37 99 235;
+  --accent-bg-rgb: 219 234 254;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --surface-1: 24 24 27;
+  --surface-2: 39 39 42;
+  --border: 63 63 70;
+  --border-strong: 82 82 91;
+  --text-primary: 244 244 245;
+  --text-secondary: 212 212 216;
+  --text-muted: 161 161 170;
+  --text-warning: 251 191 36;
+  --bg-warning: 120 53 15;
+  --text-danger: 248 113 113;
+  --bg-danger: 127 29 29;
+  --text-success: 74 222 128;
+  --bg-success: 20 83 45;
 }
