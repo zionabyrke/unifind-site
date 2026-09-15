@@ -2,8 +2,8 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Default-deny: every route requires a session unless listed here.
-// Add a new page and it's protected automatically - nothing to remember
-const PUBLIC_EXACT_PATHS = ["/sign-in"];
+// Add a new page and it's protected automatically - nothing to remember.
+const PUBLIC_EXACT_PATHS = ["/sign-in", "/privacy", "/terms"];
 const PUBLIC_PATH_PREFIXES = ["/auth"]; // /auth/callback, and any future auth sub-routes
 
 function isPublicPath(pathname: string): boolean {
@@ -31,7 +31,7 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  // Touching getUser() is what actually triggers the refresh + cookie write
+  // Touching getUser() is what actually triggers the refresh + cookie write.
   const {
     data: { user },
   } = await supabase.auth.getUser();
