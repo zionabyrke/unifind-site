@@ -1,6 +1,6 @@
 # UniFind Terms of Service
 
-**Last updated: September 15, 2025**
+**Last updated: September 15, 2026**
 
 ## 1. Who we are
 

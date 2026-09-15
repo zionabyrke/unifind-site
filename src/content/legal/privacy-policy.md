@@ -1,6 +1,6 @@
 # UniFind Privacy Policy
 
-**Last updated: September 15, 2025**
+**Last updated: September 15, 2026**
 
 ## 1. Overview
 
