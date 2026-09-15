@@ -105,10 +105,7 @@ UniFind today:
   themselves) are structurally retained rather than deleted, to preserve
   transaction history. If you request deletion, we will [anonymize /
   restrict further use of / retain only as legally required] this data
-  rather than erase it outright. **[This bracket needs an actual product +
-  legal decision - right now the schema simply prevents deletion of
-  referenced records; how that's communicated to users needs to be decided
-  before this policy can promise something specific.]**
+  rather than erase it outright.
 
 ## 8. Third-party services
 
